@@ -4,4 +4,41 @@ Random string generators with solutions using the math/rand or the crypto/rand l
 
 To get a random string using the math/rand package, use the following example:
 
+```go
+package main
+
+import (
+    "fmt"
+
+    "github.com/gilcrest/rand"
+)
+
+func main() {
+    randomString := rand.MathString(20)
+    l := len(randomString)
+    fmt.Printf("random string = %s with a length = %d\n", randomString, l)
+    // Output: random string = sCo2RC8PxUYTkJlIzxyZ with a length = 20
+}
+```
+
 To get a random string using the crypto/rand package, use the following example:
+
+```go
+package main
+
+import (
+    "fmt"
+
+    "github.com/gilcrest/rand"
+)
+
+func main() {
+    randomString, err := rand.CryptoString(15)
+    if err != nil {
+        panic(err)
+    }
+    l := len(randomString)
+    fmt.Printf("random string = %s with a length = %d\n", randomString, l)
+    // Output: random string = QkQbyxjV4lqGkTfim8VR with a length = 20
+}
+```
