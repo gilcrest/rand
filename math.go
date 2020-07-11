@@ -11,12 +11,15 @@ type Charset uint8
 // Different Character Set values
 const (
 	Default Charset = iota
+	UppersAndNumbers
 )
 
 func (c Charset) String() string {
 	switch c {
 	case Default:
 		return "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	case UppersAndNumbers:
+		return "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	}
 	return "unknown Character Set"
 }
